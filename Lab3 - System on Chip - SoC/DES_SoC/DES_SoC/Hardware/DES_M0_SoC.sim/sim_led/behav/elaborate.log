@@ -1,0 +1,15 @@
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto d7179c6114604f6da574168f7f29da4f --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot TB_ledtest_behav xil_defaultlib.TB_ledtest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" Line 23. Module hex2seg doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.hex2seg
+Compiling module xil_defaultlib.AHBLed2
+Compiling module xil_defaultlib.TB_ledtest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot TB_ledtest_behav

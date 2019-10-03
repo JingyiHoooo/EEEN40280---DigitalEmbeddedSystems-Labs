@@ -1,0 +1,8 @@
+Dependencies for Project 'DES_M0_SoC_Basic_Uart', Target 'Target 1': (DO NOT MODIFY !)
+F (.\retarget.c)(0x5CC6E88C)(-c --cpu Cortex-M0 -D__EVAL --li -g -O0 --apcs=interwork -I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-o .\temp_files\retarget.o --omf_browse .\temp_files\retarget.crf --depend .\temp_files\retarget.d)
+I (C:\Keil_v4\ARM\ARMCC\include\stdio.h)(0x51C827C4)
+I (DES_M0_SoC.h)(0x5CC6EF26)
+F (.\cm0dsasm.s)(0x5CC6E88B)(--cpu Cortex-M0 --li --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include--list .\temp_files\cm0dsasm.lst --xref -o .\temp_files\cm0dsasm.o --depend .\temp_files\cm0dsasm.d)
+F (.\main.c)(0x5CC6F99F)(-c --cpu Cortex-M0 -D__EVAL --li -g -O0 --apcs=interwork -I C:\Keil_v4\ARM\RV31\INC-I C:\Keil_v4\ARM\CMSIS\Include-o .\temp_files\main.o --omf_browse .\temp_files\main.crf --depend .\temp_files\main.d)
+I (C:\Keil_v4\ARM\ARMCC\include\stdio.h)(0x51C827C4)
+I (DES_M0_SoC.h)(0x5CC6EF26)

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TB_AHBuart2_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TB_AHBuart2" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="19" />
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HCLK" type="logic">
+      <obj_property name="ElementShortName">HCLK</obj_property>
+      <obj_property name="ObjectShortName">HCLK</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HRESETn" type="logic">
+      <obj_property name="ElementShortName">HRESETn</obj_property>
+      <obj_property name="ObjectShortName">HRESETn</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HSELx" type="logic">
+      <obj_property name="ElementShortName">HSELx</obj_property>
+      <obj_property name="ObjectShortName">HSELx</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HADDR" type="array">
+      <obj_property name="ElementShortName">HADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HADDR[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HTRANS" type="array">
+      <obj_property name="ElementShortName">HTRANS[1:0]</obj_property>
+      <obj_property name="ObjectShortName">HTRANS[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HWRITE" type="logic">
+      <obj_property name="ElementShortName">HWRITE</obj_property>
+      <obj_property name="ObjectShortName">HWRITE</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HSIZE" type="array">
+      <obj_property name="ElementShortName">HSIZE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">HSIZE[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HWDATA" type="array">
+      <obj_property name="ElementShortName">HWDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HWDATA[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HRDATA" type="array">
+      <obj_property name="ElementShortName">HRDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HRDATA[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HREADY" type="logic">
+      <obj_property name="ElementShortName">HREADY</obj_property>
+      <obj_property name="ObjectShortName">HREADY</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/serialRx" type="logic">
+      <obj_property name="ElementShortName">serialRx</obj_property>
+      <obj_property name="ObjectShortName">serialRx</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/serialTx" type="logic">
+      <obj_property name="ElementShortName">serialTx</obj_property>
+      <obj_property name="ObjectShortName">serialTx</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/uart_IRQ" type="logic">
+      <obj_property name="ElementShortName">uart_IRQ</obj_property>
+      <obj_property name="ObjectShortName">uart_IRQ</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/error" type="logic">
+      <obj_property name="ElementShortName">error</obj_property>
+      <obj_property name="ObjectShortName">error</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/BYTE" type="array">
+      <obj_property name="ElementShortName">BYTE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">BYTE[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/HALF" type="array">
+      <obj_property name="ElementShortName">HALF[2:0]</obj_property>
+      <obj_property name="ObjectShortName">HALF[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/WORD" type="array">
+      <obj_property name="ElementShortName">WORD[2:0]</obj_property>
+      <obj_property name="ObjectShortName">WORD[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/IDLE" type="array">
+      <obj_property name="ElementShortName">IDLE[1:0]</obj_property>
+      <obj_property name="ObjectShortName">IDLE[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/TB_AHBuart2/NONSEQ" type="array">
+      <obj_property name="ElementShortName">NONSEQ[1:0]</obj_property>
+      <obj_property name="ObjectShortName">NONSEQ[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

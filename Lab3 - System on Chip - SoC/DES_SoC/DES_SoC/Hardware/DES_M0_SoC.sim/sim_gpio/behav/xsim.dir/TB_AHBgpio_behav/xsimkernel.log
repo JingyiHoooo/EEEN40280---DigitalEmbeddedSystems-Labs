@@ -1,0 +1,7 @@
+Running: xsim.dir/TB_AHBgpio_behav/xsimk.exe -simmode gui -wdb TB_AHBgpio_behav.wdb -simrunnum 0 -socket 49386
+Design successfully loaded
+Design Loading Memory Usage: 19520 KB (Peak: 19520 KB)
+Design Loading CPU Usage: 124 ms
+Simulation completed
+Simulation Memory Usage: 19932 KB (Peak: 19932 KB)
+Simulation CPU Usage: 124 ms

@@ -1,0 +1,1 @@
+-wto "d7179c6114604f6da574168f7f29da4f" --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "TB_ledtest_behav" "xil_defaultlib.TB_ledtest" "xil_defaultlib.glbl" -log "elaborate.log" 

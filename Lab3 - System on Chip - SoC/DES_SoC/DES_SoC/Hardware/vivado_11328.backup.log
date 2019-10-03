@@ -1,0 +1,325 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Mon Apr 29 17:36:58 2019
+# Process ID: 11328
+# Current directory: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11576 E:\Univ\ucd\EEEN40280 DigitalEmbeddedSystems\LAB 3\DES_SoC\DES_SoC\Hardware\DES_M0_SoC.xpr
+# Log file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/vivado.log
+# Journal file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/lab/Documents/Embedded Digital Systems/Tuesday/DES_SoC/Hardware' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/spitx.v', nor could it be found using path 'C:/Users/lab/Documents/Embedded Digital Systems/Tuesday/DES_SoC/Hardware/Source/spitx.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/vivado/Vivado/2017.2/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'blk_mem_4Kword' is locked:
+* IP definition 'Block Memory Generator (8.2)' for IP 'blk_mem_4Kword' (customized with software release 2015.2) has a newer minor version in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'blk_mem_8Kword' is locked:
+* IP definition 'Block Memory Generator (8.2)' for IP 'blk_mem_8Kword' (customized with software release 2015.2) has a newer minor version in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+INFO: [Project 1-230] Project 'DES_M0_SoC.xpr' upgraded for this version of Vivado.
+open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:20 . Memory (MB): peak = 810.723 ; gain = 117.738
+update_compile_order -fileset sim_uart
+update_compile_order -fileset sim_led
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Apr 29 17:38:53 2019] Launched synth_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1/runme.log
+remove_files  -fileset sim_spi {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sim_spi/new/TB_spi.v}}
+set_property is_enabled false [get_files  {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sim_spi/new/TB_spitx.v}}]
+remove_files  -fileset sim_spi {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sim_spi/new/TB_spitx.v}}
+launch_runs impl_1 -jobs 2
+[Mon Apr 29 17:40:21 2019] Launched impl_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/impl_1/runme.log
+move_files [get_files  {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/spitx.v}}]
+reset_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon Apr 29 17:43:42 2019] Launched synth_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1/runme.log
+move_files -fileset sim_spi [get_files  {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/spitx.v}}]
+delete_fileset sim_spi
+file delete -force {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sim_spi}
+create_fileset -simset sim_spi
+set_property SOURCE_SET {} [get_filesets sim_spi]
+add_files -fileset sim_spi -norecurse {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/AHBSpi.v} {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/TB_spitest.v}}
+launch_simulation -simset sim_led
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_led'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/vivado/Vivado/2017.2/data/xsim/ip/xsim_ip.ini' copied to run dir:'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'TB_ledtest' in fileset 'sim_led'...
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/blk_mem_8Kword.mif'
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/ROMcode4.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_led'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+"xvlog -m64 --relax -prj TB_ledtest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/AHBLed2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AHBLed2
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex2seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TB_ledtest
+WARNING: [VRFC 10-159] /* in comment [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v:77]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto d7179c6114604f6da574168f7f29da4f --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot TB_ledtest_behav xil_defaultlib.TB_ledtest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" Line 23. Module hex2seg doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.hex2seg
+Compiling module xil_defaultlib.AHBLed2
+Compiling module xil_defaultlib.TB_ledtest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot TB_ledtest_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source E:/Univ/ucd/EEEN40280 -notrace
+couldn't read file "E:/Univ/ucd/EEEN40280": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Mon Apr 29 17:50:01 2019...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 830.695 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TB_ledtest_behav -key {Behavioral:sim_led:Functional:TB_ledtest} -tclbatch {TB_ledtest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source TB_ledtest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 845.531 ; gain = 14.836
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TB_ledtest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 845.531 ; gain = 14.836
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 867.676 ; gain = 0.000
+launch_simulation -simset sim_led
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_led'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/vivado/Vivado/2017.2/data/xsim/ip/xsim_ip.ini' copied to run dir:'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'TB_ledtest' in fileset 'sim_led'...
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/blk_mem_8Kword.mif'
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/ROMcode4.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_led'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+"xvlog -m64 --relax -prj TB_ledtest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/AHBLed2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AHBLed2
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex2seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TB_ledtest
+WARNING: [VRFC 10-159] /* in comment [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v:77]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto d7179c6114604f6da574168f7f29da4f --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot TB_ledtest_behav xil_defaultlib.TB_ledtest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" Line 23. Module hex2seg doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.hex2seg
+Compiling module xil_defaultlib.AHBLed2
+Compiling module xil_defaultlib.TB_ledtest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot TB_ledtest_behav
+
+****** Webtalk v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source E:/Univ/ucd/EEEN40280 -notrace
+couldn't read file "E:/Univ/ucd/EEEN40280": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Tue Apr 30 12:27:57 2019...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 867.676 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "TB_ledtest_behav -key {Behavioral:sim_led:Functional:TB_ledtest} -tclbatch {TB_ledtest.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+source TB_ledtest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'TB_ledtest_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 867.676 ; gain = 0.000
+run 4 ms
+relaunch_sim
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_led'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/vivado/Vivado/2017.2/data/xsim/ip/xsim_ip.ini' copied to run dir:'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'TB_ledtest' in fileset 'sim_led'...
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/blk_mem_8Kword.mif'
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/ROMcode4.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_led'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+"xvlog -m64 --relax -prj TB_ledtest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/AHBLed2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AHBLed2
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex2seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TB_ledtest
+WARNING: [VRFC 10-159] /* in comment [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v:77]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto d7179c6114604f6da574168f7f29da4f --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot TB_ledtest_behav xil_defaultlib.TB_ledtest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" Line 23. Module hex2seg doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.hex2seg
+Compiling module xil_defaultlib.AHBLed2
+Compiling module xil_defaultlib.TB_ledtest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot TB_ledtest_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 874.754 ; gain = 0.000
+run 4 ms
+remove_forces { {/TB_ledtest/dut/currdig[2]} {/TB_ledtest/dut/currdig[1]} {/TB_ledtest/dut/currdig[0]} }
+run 4 ms
+relaunch_sim
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_led'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/vivado/Vivado/2017.2/data/xsim/ip/xsim_ip.ini' copied to run dir:'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'TB_ledtest' in fileset 'sim_led'...
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/blk_mem_8Kword.mif'
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/ROMcode4.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_led'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+"xvlog -m64 --relax -prj TB_ledtest_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/AHBLed2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AHBLed2
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex2seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TB_ledtest
+WARNING: [VRFC 10-159] /* in comment [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v:77]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav'
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto d7179c6114604f6da574168f7f29da4f --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot TB_ledtest_behav xil_defaultlib.TB_ledtest xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" Line 23. Module hex2seg doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.hex2seg
+Compiling module xil_defaultlib.AHBLed2
+Compiling module xil_defaultlib.TB_ledtest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot TB_ledtest_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+Vivado Simulator 2017.2
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 893.523 ; gain = 0.000
+run 4 ms
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1
+
+launch_runs synth_1 -jobs 2
+[Tue Apr 30 15:13:02 2019] Launched synth_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1
+
+launch_runs synth_1 -jobs 2
+[Tue Apr 30 15:13:43 2019] Launched synth_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1
+
+launch_runs synth_1 -jobs 2
+[Tue Apr 30 15:14:19 2019] Launched synth_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1
+
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 30 15:15:03 2019...

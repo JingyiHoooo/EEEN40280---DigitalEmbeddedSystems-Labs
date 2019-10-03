@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Apr 30 15:15:14 2019
+# Process ID: 4612
+# Current directory: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6816 E:\Univ\ucd\EEEN40280 DigitalEmbeddedSystems\LAB 3\DES_SoC\DES_SoC\Hardware\DES_M0_SoC.xpr
+# Log file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/vivado.log
+# Journal file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.xpr}
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_simulation -simset sim_led -mode post-synthesis -type timing
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+close_design
+open_run impl_1

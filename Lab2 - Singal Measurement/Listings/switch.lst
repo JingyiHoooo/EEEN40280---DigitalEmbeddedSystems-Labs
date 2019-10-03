@@ -1,0 +1,60 @@
+C51 COMPILER V9.59.0.0   SWITCH                                                            05/30/2019 23:38:32 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE SWITCH
+OBJECT MODULE PLACED IN .\Objects\switch.obj
+COMPILER INVOKED BY: F:\Keil\C51\BIN\C51.EXE Sources\switch.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listin
+                    -gs\switch.lst) TABS(2) OBJECT(.\Objects\switch.obj)
+
+line level    source
+
+   1          #include "switch.h"
+   2          #include <ADUC841.h>
+   3          
+   4            void get_mode(){
+   5   1          uint8 mode;
+   6   1          uint32 measurement;
+   7   1          //SWITCH_PORT = SWITCH_PORT_MASK;
+   8   1          SWITCH_PORT = 3;
+   9   1          mode = SWITCH_PORT & SWITCH_PORT_MASK;
+  10   1          
+  11   1          //setup hardware based on new mode
+  12   1          switch(mode){ 
+  13   2            case DC_MODE:
+  14   2              // measure DC voltage
+  15   2              measurement = measure_dc();
+  16   2              write_8display(measurement, 6);
+  17   2              break;
+  18   2              
+  19   2            case RMS_MODE:
+  20   2              // measure RMS
+  21   2              measurement = measure_rms();
+  22   2              write_8display(measurement, 6);
+  23   2              break;
+  24   2              
+  25   2            case PEAK_MODE: 
+  26   2              // measure Peak Value
+  27   2              measurement = measure_peak();
+  28   2              write_8display(measurement, 6);
+  29   2              break;
+  30   2              
+  31   2            case FREQUENCY_MODE:
+  32   2              measurement = get_frequency(); // measure signal frequency
+  33   2              write_8display(measurement, NO_DECIMAL);
+  34   2              break;
+  35   2          }
+  36   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     65    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

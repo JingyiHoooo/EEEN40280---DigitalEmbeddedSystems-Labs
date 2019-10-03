@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Apr 30 12:27:57 2019
+# Process ID: 9828
+# Current directory: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav
+# Command line: wbtcv.exe -mode batch -source E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/xsim.dir/TB_ledtest_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/webtalk.log
+# Journal file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav\webtalk.jou
+#-----------------------------------------------------------
+source E:/Univ/ucd/EEEN40280 -notrace
+couldn't read file "E:/Univ/ucd/EEEN40280": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Tue Apr 30 12:27:57 2019...

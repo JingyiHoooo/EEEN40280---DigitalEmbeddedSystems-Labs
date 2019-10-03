@@ -1,0 +1,214 @@
+C51 COMPILER V9.59.0.0   ADC                                                               05/30/2019 23:38:32 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE ADC
+OBJECT MODULE PLACED IN .\Objects\adc.obj
+COMPILER INVOKED BY: F:\Keil\C51\BIN\C51.EXE Sources\adc.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -adc.lst) TABS(2) OBJECT(.\Objects\adc.obj)
+
+line level    source
+
+   1          #include "adc.h"
+   2          #include <ADUC841.h>
+   3          
+   4          uint32 const ADC_UNIT_LEVEL = 610; // one level of ADC is 0.61035 mV = 2.5/2^12
+   5          
+   6          uint8 MEASUREMENT_MODE;
+   7          bit sum_ready;
+   8          uint8 sum_pointer;
+   9          
+  10          uint32 dc_average;
+  11          uint32 rms_average;
+  12          
+  13          // interrupt routine
+  14          void adc() interrupt 6 {
+  15   1        uint16 adc_value = ((ADCDATAH & HIGH_BYTE_MASK) << 8) | ADCDATAL; //0X00| 00XX = 0XXX
+  16   1        
+  17   1        dc_average += adc_value;
+  18   1        
+  19   1        if(MEASUREMENT_MODE == MEASURE_RMS) //0x01
+  20   1          rms_average += (uint32) adc_value * adc_value;
+  21   1        
+  22   1        sum_pointer++;
+  23   1        
+  24   1        if((sum_pointer - 1) == ((1 << SAMPLE_SHIFT)) - 1) //1000 0000
+  25   1          sum_ready = 1;
+  26   1      }
+  27          
+  28          // get square root of uin32 value
+  29          uint16 sqrt(uint32 value) {
+  30   1        uint32 temp;
+  31   1        uint16 square_root = 0x8000; //middle point value
+  32   1        uint8 counter;
+  33   1        
+  34   1        // go through all 16 possible bisection method
+  35   1        
+  36   1      
+  37   1        for(counter = 16; counter > 0; counter--) {
+  38   2          temp = (uint32) square_root * square_root;
+  39   2                                                   
+  40   2          if(temp > value) // if too big, go down     
+  41   2            square_root ^= (1 << counter);        
+  42   2          else if(temp == value) // early exit
+  43   2            return square_root;
+  44   2          
+  45   2          // add next bit
+  46   2          square_root |= (1 << (counter - 1)); // for example 1000 0000 0000 0000 > value, sqr = 0100 0000 0000 00
+             -00;
+  47   2                                               // but if it is smaller, sqr = 1100 0000 0000 0000
+  48   2        }
+  49   1        // sqr by last loop round will not be examinated, therefore,
+  50   1        // check whether the last bit makes it closer or not (precision determination)
+  51   1        temp = (uint32) square_root * square_root;
+  52   1        if(temp > value) {
+  53   2            if((temp - value) > ((uint32) (square_root - 1) * (square_root - 1) - value))
+C51 COMPILER V9.59.0.0   ADC                                                               05/30/2019 23:38:32 PAGE 2   
+
+  54   2              square_root ^= 1;     //if yes, sqr-1 got more closer value
+  55   2                                    // otherwise, temp is more precise
+  56   2        }
+  57   1        
+  58   1        return square_root;
+  59   1      }
+  60          
+  61          // set up the SFRs for the ADC
+  62          void setup_adc() {
+  63   1        EADC = 1;  // enable ADC interrupts
+  64   1        EA = 1;    // enable all interrupt sources
+  65   1        
+  66   1        // 17 cycles minimum for acquisition
+  67   1        ADCCON1 = 
+  68   1          (1 << MD1_P) | // power up
+  69   1          (0 << REF_P) | // internal reference
+  70   1          (3 << DIV_P) | // division by 2, 32 - 2
+  71   1          (2 << ACQ_P) | // 1 clock to acquire, 1 - 4
+  72   1          (1 << T2C_P) | // enable Timer2 overflow bit
+  73   1          (0 << EXC_P);  // disable external interrupt
+  74   1      }
+  75          
+  76          // set up timer2 to interrupt at particular frequency
+  77          void setup_timer2(uint32 frequency) {
+  78   1        if(frequency > ADC_FREQ_LIM)      //81.317kHz
+  79   1          frequency = ADC_FREQ_LIM;
+  80   1        
+  81   1        if(frequency < ADC_LFREQ_LIM)
+  82   1          frequency = ADC_LFREQ_LIM;
+  83   1          
+  84   1        frequency <<= 2;
+  85   1        
+  86   1        T2CON = 0; //POWER ON default
+  87   1        
+  88   1        frequency = ADUC_CLOCK / frequency;
+  89   1        frequency = COUNTER_16_MAX - frequency;
+  90   1        
+  91   1        RCAP2H = frequency >> 8;
+  92   1        RCAP2L = frequency;//
+  93   1      }
+  94          
+  95          // start timer2
+  96          void start_timer2() {
+  97   1        // reset all values for the adc
+  98   1        sum_ready = 0;
+  99   1        sum_pointer = 0;
+ 100   1        dc_average = 0;
+ 101   1        rms_average = 0;
+ 102   1        
+ 103   1        EADC = 1;
+ 104   1        T2CON =
+ 105   1            (0 << TF2_P) |  // overflow flag
+ 106   1            (1 << TR2_P) |  // start timer2
+ 107   1            (0 << CNT2_P) | // timer function
+ 108   1            (0 << CAP2_P);   // enable reloads after overflow
+ 109   1      }
+ 110          
+ 111          // wait for all measurements to complete
+ 112          void await_measurement() {
+ 113   1        while(!sum_ready);  //sum_ready = 0 do the loop
+ 114   1        
+ 115   1        EADC = 0;
+C51 COMPILER V9.59.0.0   ADC                                                               05/30/2019 23:38:32 PAGE 3   
+
+ 116   1        T2CON = 0;
+ 117   1      }
+ 118          
+ 119          // measures an ac signal
+ 120          uint32 measure_rms() {
+ 121   1        uint32 freq = get_frequency();
+ 122   1        measure_at_frequency(freq);
+ 123   1        
+ 124   1        dc_average >>= SAMPLE_SHIFT;
+ 125   1        rms_average >>= SAMPLE_SHIFT;
+ 126   1        
+ 127   1        rms_average -= ((uint32) dc_average * dc_average); //**********
+ 128   1        rms_average = sqrt(rms_average) << LEVEL_SHIFT_SCALE;
+ 129   1        
+ 130   1        return rms_average * ADC_UNIT_LEVEL;
+ 131   1      }
+ 132          
+ 133          // measures an ac signal
+ 134          uint32 measure_peak() {
+ 135   1        uint32 freq = get_frequency();
+ 136   1        measure_at_frequency(freq);
+ 137   1        
+ 138   1        dc_average >>= SAMPLE_SHIFT;
+ 139   1        rms_average >>= SAMPLE_SHIFT;
+ 140   1        
+ 141   1        rms_average -= ((uint32) dc_average * dc_average);
+ 142   1        rms_average = sqrt(rms_average << ROOT_2) << LEVEL_SHIFT_SCALE;
+ 143   1        
+ 144   1        return rms_average * ADC_UNIT_LEVEL;
+ 145   1      }
+ 146          
+ 147          // measures an ac signal at given frequency
+ 148          void measure_at_frequency(uint32 frequency) {
+ 149   1        setup_timer2(frequency);
+ 150   1        
+ 151   1        MEASUREMENT_MODE = MEASURE_RMS;
+ 152   1        
+ 153   1        ADCCON2 =
+ 154   1          (0 << ADCI_P) | // interrupt
+ 155   1          (0 << DMA_P) |
+ 156   1          (0 << CCONV_P) |
+ 157   1          (0 << SCONV_P) |
+ 158   1          (1 << CHAN_P); // channel select, 0-7, temp, dac0,1, agnd, vref, dmastop
+ 159   1        
+ 160   1        start_timer2();
+ 161   1      
+ 162   1        await_measurement();
+ 163   1      }
+ 164          
+ 165          // measures a dc voltage at a high frequency
+ 166          uint32 measure_dc() {
+ 167   1        setup_timer2(ADC_FREQ_LIM >> 5); // go at maxfreq / 32 (arbitrary)
+ 168   1        
+ 169   1        MEASUREMENT_MODE = MEASURE_DC;
+ 170   1        
+ 171   1        ADCCON2 =
+ 172   1          (0 << ADCI_P) | // interrupt
+ 173   1          (0 << DMA_P) |
+ 174   1          (0 << CCONV_P) |
+ 175   1          (0 << SCONV_P) |
+ 176   1          (0 << CHAN_P); // channel select, 0-7, temp, dac0,1, agnd, vref, dmastop
+ 177   1        
+C51 COMPILER V9.59.0.0   ADC                                                               05/30/2019 23:38:32 PAGE 4   
+
+ 178   1        start_timer2();
+ 179   1        
+ 180   1        await_measurement();
+ 181   1      
+ 182   1        return ((dc_average >> SAMPLE_SHIFT) * ADC_UNIT_LEVEL);
+ 183   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    936    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     14      13
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

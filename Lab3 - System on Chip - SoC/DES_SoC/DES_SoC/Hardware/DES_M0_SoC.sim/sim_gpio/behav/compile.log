@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/lab/Documents/EmbeddedSystems/Tuesday/DES_SoC/Hardware/Source/AHBgpio.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AHBgpio
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/lab/Documents/EmbeddedSystems/Tuesday/DES_SoC/Hardware/Testbench/TB_AHBgpio.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TB_AHBgpio
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/lab/Documents/EmbeddedSystems/Tuesday/DES_SoC/Hardware/DES_M0_SoC.sim/sim_gpio/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

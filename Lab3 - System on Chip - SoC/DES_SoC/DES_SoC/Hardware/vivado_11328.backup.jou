@@ -1,0 +1,58 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Mon Apr 29 17:36:58 2019
+# Process ID: 11328
+# Current directory: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11576 E:\Univ\ucd\EEEN40280 DigitalEmbeddedSystems\LAB 3\DES_SoC\DES_SoC\Hardware\DES_M0_SoC.xpr
+# Log file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/vivado.log
+# Journal file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.xpr}
+update_compile_order -fileset sim_uart
+update_compile_order -fileset sim_led
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+remove_files  -fileset sim_spi {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sim_spi/new/TB_spi.v}}
+set_property is_enabled false [get_files  {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sim_spi/new/TB_spitx.v}}]
+remove_files  -fileset sim_spi {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sim_spi/new/TB_spitx.v}}
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+move_files [get_files  {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/spitx.v}}]
+reset_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+move_files -fileset sim_spi [get_files  {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/spitx.v}}]
+delete_fileset sim_spi
+file delete -force {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sim_spi}
+create_fileset -simset sim_spi
+set_property SOURCE_SET {} [get_filesets sim_spi]
+add_files -fileset sim_spi -norecurse {{E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/AHBSpi.v} {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/TB_spitest.v}}
+launch_simulation -simset sim_led
+source TB_ledtest.tcl
+close_sim
+launch_simulation -simset sim_led
+source TB_ledtest.tcl
+run 4 ms
+relaunch_sim
+run 4 ms
+remove_forces { {/TB_ledtest/dut/currdig[2]} {/TB_ledtest/dut/currdig[1]} {/TB_ledtest/dut/currdig[0]} }
+run 4 ms
+relaunch_sim
+run 4 ms
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+close_sim

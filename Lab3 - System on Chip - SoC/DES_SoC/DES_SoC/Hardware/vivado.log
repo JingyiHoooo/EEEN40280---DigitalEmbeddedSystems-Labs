@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Wed May  1 11:27:32 2019
+# Process ID: 8488
+# Current directory: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10880 E:\Univ\ucd\EEEN40280 DigitalEmbeddedSystems\LAB 3\DES_SoC\DES_SoC\Hardware\DES_M0_SoC.xpr
+# Log file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/vivado.log
+# Journal file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/vivado/Vivado/2017.2/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'blk_mem_4Kword' is locked:
+* IP definition 'Block Memory Generator (8.2)' for IP 'blk_mem_4Kword' (customized with software release 2015.2) has a newer minor version in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'blk_mem_8Kword' is locked:
+* IP definition 'Block Memory Generator (8.2)' for IP 'blk_mem_8Kword' (customized with software release 2015.2) has a newer minor version in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+open_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:19 . Memory (MB): peak = 789.555 ; gain = 45.500
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May  1 12:08:31 2019...

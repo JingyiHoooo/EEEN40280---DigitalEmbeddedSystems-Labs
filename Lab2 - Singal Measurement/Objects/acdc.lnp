@@ -1,0 +1,8 @@
+".\Objects\START_AD.obj",
+".\Objects\adc.obj",
+".\Objects\display_8d.obj",
+".\Objects\frequency.obj",
+".\Objects\main.obj",
+".\Objects\switch.obj" 
+TO ".\Objects\acdc" 
+PRINT(".\Listings\acdc.m51") RAMSIZE(256) 

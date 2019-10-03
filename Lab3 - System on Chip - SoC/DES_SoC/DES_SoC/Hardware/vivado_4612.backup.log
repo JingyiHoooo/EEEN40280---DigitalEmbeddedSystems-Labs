@@ -1,0 +1,130 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Apr 30 15:15:14 2019
+# Process ID: 4612
+# Current directory: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6816 E:\Univ\ucd\EEEN40280 DigitalEmbeddedSystems\LAB 3\DES_SoC\DES_SoC\Hardware\DES_M0_SoC.xpr
+# Log file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/vivado.log
+# Journal file: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/vivado/Vivado/2017.2/data/ip'.
+WARNING: [IP_Flow 19-2162] IP 'blk_mem_4Kword' is locked:
+* IP definition 'Block Memory Generator (8.2)' for IP 'blk_mem_4Kword' (customized with software release 2015.2) has a newer minor version in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+WARNING: [IP_Flow 19-2162] IP 'blk_mem_8Kword' is locked:
+* IP definition 'Block Memory Generator (8.2)' for IP 'blk_mem_8Kword' (customized with software release 2015.2) has a newer minor version in the IP Catalog.
+Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:09 . Memory (MB): peak = 767.141 ; gain = 105.434
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 2
+[Tue Apr 30 15:16:29 2019] Launched synth_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Tue Apr 30 15:17:39 2019] Launched synth_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Tue Apr 30 15:20:34 2019] Launched synth_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Tue Apr 30 15:25:56 2019] Launched synth_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/synth_1/runme.log
+launch_simulation -simset sim_led -mode post-synthesis -type timing
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_led'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Project 1-454] Reading design checkpoint 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/CORTEXM0DS_synth_1/CORTEXM0DS.dcp' for cell 'cpu'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sources_1/ip/blk_mem_4Kword/blk_mem_4Kword.dcp' for cell 'RAM/bram0'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sources_1/ip/blk_mem_8Kword/blk_mem_8Kword.dcp' for cell 'ROM/bram1'
+INFO: [Netlist 29-17] Analyzing 132 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2015.2
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/Nexys4_Master.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/Nexys4_Master.xdc:726]
+INFO: [Timing 38-2] Deriving generated clocks [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/Nexys4_Master.xdc:726]
+get_clocks: Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1529.758 ; gain = 515.922
+Finished Parsing XDC File [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/Nexys4_Master.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/CORTEXM0DS_synth_1/CORTEXM0DS.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sources_1/ip/blk_mem_4Kword/blk_mem_4Kword.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'e:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.srcs/sources_1/ip/blk_mem_8Kword/blk_mem_8Kword.dcp'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 1534.109 ; gain = 740.836
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-25] write_verilog -mode timesim -nolib -sdf_anno true -force -file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/synth/timing/TB_ledtest_time_synth.v"
+INFO: [SIM-utils-27] Writing SDF file...
+INFO: [SIM-utils-28] write_sdf -mode timesim -process_corner slow -force -file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/synth/timing/TB_ledtest_time_synth.sdf"
+write_sdf: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1535.035 ; gain = 0.926
+INFO: [SIM-utils-36] Netlist generated:E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/synth/timing/TB_ledtest_time_synth.v
+INFO: [SIM-utils-37] SDF generated:E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/synth/timing/TB_ledtest_time_synth.sdf
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/vivado/Vivado/2017.2/data/xsim/ip/xsim_ip.ini' copied to run dir:'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/synth/timing'
+INFO: [SIM-utils-54] Inspecting design source files for 'TB_ledtest' in fileset 'sim_led'...
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/synth/timing/blk_mem_8Kword.mif'
+INFO: [SIM-utils-43] Exported 'E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/synth/timing/ROMcode4.coe'
+ERROR: [Common 17-70] Application Exception: getAndUpdateDefaultGUIDesignGraph: nullptr supplied!
+
+    while executing
+"get_files -compile_order sources -used_in synthesis_post -of_objects [get_filesets $a_sim_vars(s_simset)]"
+    (procedure "usf_get_files_for_compilation_post_sim" line 80)
+    invoked from within
+"usf_get_files_for_compilation_post_sim $global_files_str"
+    (procedure "::tclapp::xilinx::xsim::usf_get_files_for_compilation" line 18)
+    invoked from within
+"::tclapp::xilinx::xsim::usf_get_files_for_compilation global_files_str"
+    (procedure "usf_xsim_setup_simulation" line 70)
+    invoked from within
+"usf_xsim_setup_simulation"
+    (procedure "tclapp::xilinx::xsim::setup" line 19)
+    invoked from within
+"tclapp::xilinx::xsim::setup { -simset sim_led -mode post-synthesis -type timing -run_dir {E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/D..."
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:01:14 ; elapsed = 00:01:19 . Memory (MB): peak = 1548.648 ; gain = 755.375
+ERROR: [Common 17-70] Application Exception: getAndUpdateDefaultGUIDesignGraph: nullptr supplied!
+launch_runs impl_1 -jobs 2
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.139 . Memory (MB): peak = 1566.887 ; gain = 0.000
+[Tue Apr 30 15:40:45 2019] Launched impl_1...
+Run output will be captured here: E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.runs/impl_1/runme.log
+close_design
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 132 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/.Xil/Vivado-4612-Asus-PC/dcp34/AHBliteTop_early.xdc]
+Finished Parsing XDC File [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/.Xil/Vivado-4612-Asus-PC/dcp34/AHBliteTop_early.xdc]
+Parsing XDC File [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/.Xil/Vivado-4612-Asus-PC/dcp34/AHBliteTop.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/Nexys4_Master.xdc:726]
+INFO: [Timing 38-2] Deriving generated clocks [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/Nexys4_Master.xdc:726]
+Finished Parsing XDC File [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/.Xil/Vivado-4612-Asus-PC/dcp34/AHBliteTop.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1594.266 ; gain = 3.129
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1594.266 ; gain = 3.129
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 1675.145 ; gain = 108.258
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 30 19:16:22 2019...

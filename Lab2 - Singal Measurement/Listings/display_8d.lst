@@ -1,0 +1,104 @@
+C51 COMPILER V9.59.0.0   DISPLAY_8D                                                        05/30/2019 23:38:32 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE DISPLAY_8D
+OBJECT MODULE PLACED IN .\Objects\display_8d.obj
+COMPILER INVOKED BY: F:\Keil\C51\BIN\C51.EXE Sources\display_8d.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\display_8d.lst) TABS(2) OBJECT(.\Objects\display_8d.obj)
+
+line level    source
+
+   1          #include "display_8d.h"
+   2          #include <ADUC841.H>
+   3          
+   4          //ISPI will indicate a byte has been transmitted (1) or not (0)
+   5          // delay for spi purposes
+   6          void delay_spi() {
+   7   1        volatile uint8 wasted;
+   8   1        while(ISPI == 0);
+   9   1              ISPI = 0;
+  10   1              wasted = 3;
+  11   1              wasted = 0;
+  12   1        return;
+  13   1      }
+  14          
+  15          // write to the spi bus for the display
+  16          void write_dispi(uint8 reg, uint8 mdata) {
+  17   1        // load to on for accepting new data
+  18   1        LOAD_PIN |= LOAD_PIN_ON;
+  19   1        
+  20   1        // send two sets of 8 bits
+  21   1        SPIDAT = reg;
+  22   1        delay_spi();
+  23   1        
+  24   1        SPIDAT = mdata;
+  25   1        delay_spi();
+  26   1        
+  27   1        // load to off
+  28   1        LOAD_PIN &= LOAD_PIN_OFF;
+  29   1      }
+  30          
+  31          // initialise the display
+  32          void init_8display() {
+  33   1        SPICON =
+  34   1          (0 << ISPI_P) | // interrupt bit
+  35   1          (0 << WCOL_P) | // Collision Error Bit
+  36   1          (1 << SPE_P)  | // enable interface
+  37   1          (1 << SPIM_P) | // master, SCLOCK is an output
+  38   1          (0 << CPOL_P) | // SCLOCK idle low
+  39   1          (0 << CPHA_P) | // leading clock edge transmits
+  40   1          (3 << SPR_P);   // clock rate divisor, 2-16
+  41   1        
+  42   1        write_dispi(SCAN_LIMIT_REG, NUM_DIGITS - 1); // all digits allow to display
+  43   1        write_dispi(INTENSITY_REG, NUM_DIGITS);      // set brightness 8
+  44   1        write_dispi(DECODE_REG, 0xFF);  // decode ints to patterns on all digits, blank
+  45   1        write_dispi(DISP_TEST_REG, OFF);// normal operation
+  46   1        write_dispi(SHUTDOWN_REG, ON);  // ******* normal operation
+  47   1      }
+  48          
+  49          // write 32 bit value and decimal point to display
+  50          /////////////////////////////////////////////////////
+  51          void write_8display(uint32 mdata, int8 decimal) {
+  52   1        uint8 tempd = mdata / DIG8_MAX; // will always be less than 255
+  53   1        
+  54   1        // truncate the value to the number of digits currently being displayed and add the decimal point
+C51 COMPILER V9.59.0.0   DISPLAY_8D                                                        05/30/2019 23:38:32 PAGE 2   
+
+  55   1      
+  56   1        // stop until get int 0
+  57   1        while(tempd != 0) {
+  58   2          mdata /= 10;
+  59   2          tempd /= 10;
+  60   2        }
+  61   1        
+  62   1        decimal++;
+  63   1        
+  64   1        // assign digits to array
+  65   1        for(tempd = 1; tempd <= NUM_DIGITS; tempd++) {
+  66   2          if(tempd < decimal) // normal digit or before decimal point
+  67   2            write_dispi(tempd, mdata % 10);
+  68   2          else if(tempd == decimal) // decimal point
+  69   2            write_dispi(tempd, (mdata % 10) | DECIMAL_POINT);
+  70   2          else if(mdata != 0)
+  71   2            write_dispi(tempd, mdata % 10);
+  72   2          else // else blank
+  73   2            write_dispi(tempd, BLANK);
+  74   2          
+  75   2          // next digit
+  76   2          mdata /= 10;
+  77   2        }
+  78   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    293    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

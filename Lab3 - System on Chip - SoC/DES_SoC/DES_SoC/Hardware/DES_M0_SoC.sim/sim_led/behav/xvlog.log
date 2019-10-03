@@ -1,0 +1,9 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/AHBLed2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AHBLed2
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Source/hex2seg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hex2seg
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TB_ledtest
+WARNING: [VRFC 10-159] /* in comment [E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/Testbench/TB_ledtest.v:77]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Univ/ucd/EEEN40280 DigitalEmbeddedSystems/LAB 3/DES_SoC/DES_SoC/Hardware/DES_M0_SoC.sim/sim_led/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
